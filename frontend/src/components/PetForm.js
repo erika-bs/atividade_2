@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import api from "../service/api";
 
-// Estilos com Styled Components
 const FormContainer = styled.form`
   background-color: #fff;
   padding: 20px;
