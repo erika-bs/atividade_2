@@ -58,7 +58,6 @@ function PetForm({ onPetAdicionado }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Verificação de dados antes de enviar
     if (!nome || !raca || !dono || !dataNascimento) {
       alert('Por favor, preencha todos os campos.');
       return;
@@ -67,7 +66,6 @@ function PetForm({ onPetAdicionado }) {
     const petData = { nome, raca, dono: parseInt(dono), d_nasc: dataNascimento };
     console.log("Dados enviados para o backend:", petData);
 
-    // Enviar dados para o servidor
     api.post('pets/', petData)
       .then(response => {
         onPetAdicionado();
