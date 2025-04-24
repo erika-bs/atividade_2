@@ -49,14 +49,12 @@ function PetForm({ onPetAdicionado }) {
   const [dataNascimento, setDataNascimento] = useState('');
   const [donos, setDonos] = useState([]);
 
-  // Carregar donos cadastrados
   useEffect(() => {
     api.get('donos/')
       .then(response => setDonos(response.data))
       .catch(error => console.log('Erro ao buscar donos:', error));
   }, []);
 
-  // Enviar o formulário para adicionar o pet
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -66,7 +64,6 @@ function PetForm({ onPetAdicionado }) {
       return;
     }
 
-    // Garantir que dono seja um número inteiro e corrigir nome do campo d_nasc
     const petData = { nome, raca, dono: parseInt(dono), d_nasc: dataNascimento };
     console.log("Dados enviados para o backend:", petData);
 
